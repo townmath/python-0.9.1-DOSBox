@@ -1,7 +1,8 @@
 This is Python, an extensible interpreted programming language that
 combines remarkable power with very clear syntax.
 
-This is version 0.9 (the first beta release), patchlevel 1.
+This is version 0.9 (the first beta release), patchlevel 1.  Updated
+so that you can compile and use in DOSBox (tested with DOSBox 0.74-3).
 
 Python can be used instead of shell, Awk or Perl scripts, to write
 prototypes of real applications, or as an extension language of large
