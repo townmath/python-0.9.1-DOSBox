@@ -29,11 +29,11 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include "import.h"
 #include "sysmodule.h"
 #include "compile.h"
-#include "frameobject.h"
+#include "frameobj.h"
 #include "ceval.h"
 #include "opcode.h"
-#include "bltinmodule.h"
-#include "traceback.h"
+#include "bltinmod.h"
+#include "tracebac.h"
 
 #ifndef NDEBUG
 #define TRACE

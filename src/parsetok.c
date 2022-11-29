@@ -24,8 +24,8 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 /* Parser-tokenizer link implementation */
 
-#include "pgenheaders.h"
-#include "tokenizer.h"
+#include "pgenhead.h"
+#include "tokenize.h"
 #include "node.h"
 #include "grammar.h"
 #include "parser.h"

@@ -316,44 +316,44 @@ DEFPYTHONPATH= .:/usr/local/lib/python:/ufs/guido/lib/python:../lib
 # Major Definitions
 # =================
 
-STANDARD_OBJ=	acceler.o bltinmodule.o ceval.o classobject.o \
-		compile.o dictobject.o errors.o fgetsintr.o \
-		fileobject.o floatobject.o $(FMOD_OBJ) frameobject.o \
-		funcobject.o $(GETCWD_OBJ) \
+STANDARD_OBJ=	acceler.o bltinmod.o ceval.o classobj.o \
+		compile.o dictobje.o errors.o fgetsint.o \
+		fileobje.o floatobj.o $(FMOD_OBJ) frameobj.o \
+		funcobje.o $(GETCWD_OBJ) \
 		graminit.o grammar1.o import.o \
-		intobject.o intrcheck.o listnode.o listobject.o \
-		mathmodule.o methodobject.o modsupport.o \
-		moduleobject.o node.o object.o parser.o \
-		parsetok.o posixmodule.o regexp.o regexpmodule.o \
+		intobjec.o intrchec.o listnode.o listobje.o \
+		mathmodu.o methodob.o modsuppo.o \
+		moduleob.o node.o object.o parser.o \
+		parsetok.o posixmod.o regexp.o regexpmo.o \
 		strdup.o $(STRERROR_OBJ) \
-		stringobject.o $(STRTOL_OBJ) structmember.o \
-		sysmodule.o timemodule.o tokenizer.o traceback.o \
-		tupleobject.o typeobject.o
+		stringob.o $(STRTOL_OBJ) structme.o \
+		sysmodul.o timemodu.o tokenize.o tracebac.o \
+		tupleobj.o typeobje.o
 
-STANDARD_SRC=	acceler.c bltinmodule.c ceval.c classobject.c \
-		compile.c dictobject.c errors.c fgetsintr.c \
-		fileobject.c floatobject.c $(FMOD_SRC) frameobject.c \
-		funcobject.c $(GETCWD_SRC) \
+STANDARD_SRC=	acceler.c bltinmod.c ceval.c classobj.c \
+		compile.c dictobje.c errors.c fgetsint.c \
+		fileobje.c floatobj.c $(FMOD_SRC) frameobj.c \
+		funcobje.c $(GETCWD_SRC) \
 		graminit.c grammar1.c import.c \
-		intobject.c intrcheck.c listnode.c listobject.c \
-		mathmodule.c methodobject.c modsupport.c \
-		moduleobject.c node.c object.c parser.c \
-		parsetok.c posixmodule.c regexp.c regexpmodule.c \
+		intobjec.c intrchec.c listnode.c listobje.c \
+		mathmodu.c methodob.c modsuppo.c \
+		moduleob.c node.c object.c parser.c \
+		parsetok.c posixmod.c regexp.c regexpmo.c \
 		strdup.c $(STRERROR_SRC) \
-		stringobject.c $(STRTOL_SRC) structmember.c \
-		sysmodule.c timemodule.c tokenizer.c traceback.c \
-		tupleobject.c typeobject.c
+		stringob.c $(STRTOL_SRC) structme.c \
+		sysmodul.c timemodu.c tokenize.c tracebac.c \
+		tupleobj.c typeobje.c
 
 CONFIGDEFS=	$(STDW_USE) $(AM_USE) $(AUDIO_USE) $(GL_USE) $(PANEL_USE) \
 		'-DPYTHONPATH="$(DEFPYTHONPATH)"'
 
 CONFIGINCLS=	$(STDW_INCL)
 
-LIBDEPS=	libpython.a $(STDW_LIBDEPS) $(AM_LIBDEPS) \
+LIBDEPS=	libpytho.a $(STDW_LIBDEPS) $(AM_LIBDEPS) \
 		$(GL_LIBDEPS) $(PANEL_LIBSDEP) $(RL_LIBDEPS)
 
 # NB: the ordering of items in LIBS is significant!
-LIBS=		libpython.a $(STDW_LIBS) $(AM_LIBS) \
+LIBS=		libpytho.a $(STDW_LIBS) $(AM_LIBS) \
 		$(PANEL_LIBS) $(GL_LIBS) $(RL_LIBS) -lm
 
 LIBOBJECTS=	$(STANDARD_OBJ) $(STDW_OBJ) $(AM_OBJ) $(AUDIO_OBJ) \
@@ -362,37 +362,37 @@ LIBOBJECTS=	$(STANDARD_OBJ) $(STDW_OBJ) $(AM_OBJ) $(AUDIO_OBJ) \
 LIBSOURCES=	$(STANDARD_SRC) $(STDW_SRC) $(AM_SRC) $(AUDIO_SRC) \
 		$(GL_SRC) $(PANEL_SRC)
 
-OBJECTS=	pythonmain.o config.o
+OBJECTS=	pythonma.o config.o
 
-SOURCES=	$(LIBSOURCES) pythonmain.c config.c
+SOURCES=	$(LIBSOURCES) pythonma.c config.c
 
-GENOBJECTS=	acceler.o fgetsintr.o grammar1.o \
-		intrcheck.o listnode.o node.o parser.o \
-		parsetok.o strdup.o tokenizer.o bitset.o \
-		firstsets.o grammar.o metagrammar.o pgen.o \
-		pgenmain.o printgrammar.o
+GENOBJECTS=	acceler.o fgetsint.o grammar1.o \
+		intrchec.o listnode.o node.o parser.o \
+		parsetok.o strdup.o tokenize.o bitset.o \
+		firstset.o grammar.o metagram.o pgen.o \
+		pgenmain.o printgra.o
 
-GENSOURCES=	acceler.c fgetsintr.c grammar1.c \
-		intrcheck.c listnode.c node.c parser.c \
-		parsetok.c strdup.c tokenizer.c bitset.c \
-		firstsets.c grammar.c metagrammar.c pgen.c \
-		pgenmain.c printgrammar.c
+GENSOURCES=	acceler.c fgetsint.c grammar1.c \
+		intrchec.c listnode.c node.c parser.c \
+		parsetok.c strdup.c tokenize.c bitset.c \
+		firstset.c grammar.c metagram.c pgen.c \
+		pgenmain.c printgra.c
 
 
 # Main Targets
 # ============
 
-python:		libpython.a $(OBJECTS) $(LIBDEPS) Makefile
+python:		libpytho.a $(OBJECTS) $(LIBDEPS) Makefile
 		$(CC) $(CFLAGS) $(OBJECTS) $(LIBS) -o python
 
-libpython.a:	$(LIBOBJECTS)
+libpytho.a:	$(LIBOBJECTS)
 		-rm -f @lib
 		ar cr @lib $(LIBOBJECTS)
 		$(RANLIB) @lib
-		mv @lib libpython.a
+		copy @lib libpytho.a
 
-python_gen:	$(GENOBJECTS) $(RL_LIBDEPS)
-		$(CC) $(CFLAGS) $(GENOBJECTS) $(RL_LIBS) -o python_gen
+python_g:	$(GENOBJECTS) $(RL_LIBDEPS)
+		$(CC) $(CFLAGS) $(GENOBJECTS) $(RL_LIBS) -o python_g
 
 
 # Utility Targets
@@ -425,7 +425,7 @@ depend::
 
 # You may change $(CTAGS) to suit your taste...
 
-CTAGS=		ctags -t -w
+CTAGS=		ctags -t -w -I
 
 HEADERS=	*.h
 
@@ -436,7 +436,7 @@ clean::
 		-rm -f *.o core [,#@]*
 
 clobber::	clean
-		-rm -f python python_gen libpython.a tags
+		-rm -f python python_g libpytho.a tags
 
 
 # Build Special Objects
@@ -446,40 +446,40 @@ clobber::	clean
 
 COMPILE=	$(CC) -c $(CFLAGS)
 
-amoebamodule.o:	amoebamodule.c
+amoebamo.o:	amoebamo.c
 		$(COMPILE) $(AM_INCL) $*.c
 
 config.o:	config.c Makefile
 		$(COMPILE) $(CONFIGDEFS) $(CONFIGINCLS) $*.c
 
-fgetsintr.o:	fgetsintr.c
+fgetsint.o:	fgetsint.c
 		$(COMPILE) $(SIGTYPEDEF) $*.c
 
-intrcheck.o:	intrcheck.c
+intrchec.o:	intrchec.c
 		$(COMPILE) $(SIGTYPEDEF) $*.c
 
-panelmodule.o:	panelmodule.c
+panelmod.o:	panelmod.c
 		$(COMPILE) $(PANEL_INCL) $*.c
 
-posixmodule.o:	posixmodule.c
+posixmod.o:	posixmod.c
 		$(COMPILE) $(SYSVDEF) $(NOSYMLINKDEF) $*.c
 
-sc_interpr.o:	sc_interpr.c
+sc_inter.o:	sc_inter.c
 		$(COMPILE) $(AM_INCL) $*.c
 
 sc_error.o:	sc_error.c
 		$(COMPILE) $(AM_INCL) $*.c
 
-stdwinmodule.o:	stdwinmodule.c
+stdwinmo.o:	stdwinmo.c
 		$(COMPILE) $(STDW_INCL) $*.c
 
-timemodule.o:	timemodule.c
+timemodu.o:	timemodu.c
 		$(COMPILE) $(SIGTYPEDEF) $(BSDTIMEDEF) $*.c
 
-tokenizer.o:	tokenizer.c
+tokenize.o:	tokenize.c
 		$(COMPILE) $(RL_USE) $*.c
 
-.PRECIOUS:	python libpython.a glmodule.c graminit.c graminit.h
+.PRECIOUS:	python libpytho.a glmodule.c graminit.c graminit.h
 
 
 # Generated Sources
